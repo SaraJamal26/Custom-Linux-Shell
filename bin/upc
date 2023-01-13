@@ -1,0 +1,2 @@
+#!/bin/bash
+command ls | grep '^[A-Z]'

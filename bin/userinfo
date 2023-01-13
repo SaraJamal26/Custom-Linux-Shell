@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Number of users: " 
+getent passwd | wc -l 
+echo
+echo "Usernames: "
+awk -F: '{print $1}' /etc/passwd

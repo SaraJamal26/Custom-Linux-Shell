@@ -1,0 +1,3 @@
+#!/bin/bash
+command sort $1 > copy$1
+command sort -o copy$1 $1

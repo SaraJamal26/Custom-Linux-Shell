@@ -1,0 +1,3 @@
+#!/bin/bash
+command ls -l | egrep '^d'
+

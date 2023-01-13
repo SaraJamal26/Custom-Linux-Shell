@@ -1,0 +1,7 @@
+#!/bin/bash
+echo 
+echo -n "Frequency of '$2' in file '$1' = "
+grep -c $2 $1
+echo
+echo "Occurences of '$2':"
+grep --color $2 $1

@@ -1,0 +1,26 @@
+#!/bin/bash
+temp=$1
+find=$(cat $1)
+flag=0
+n=0
+finding() 
+{
+    local str=$1
+    local search=$2
+    for col in $str; do 
+    if [[ $col == $search ]]; then
+	flag=1
+        break
+    else
+        ((n++))
+    fi
+    done
+}
+finding "$find" "$2"
+((x++))
+if [[ $flag == 0 ]]; then
+    echo "Word not found!"
+else
+    echo "$2 is $n""th word"
+fi
+

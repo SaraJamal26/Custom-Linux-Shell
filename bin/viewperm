@@ -1,0 +1,25 @@
+#!/bin/bash
+print_perm() {
+  case "$1" in
+    0) echo "NO PERMISSIONS";;
+    1) echo "Execute only";;
+    2) echo "Write only";;
+    3) echo "Write & execute";;
+    4) echo "Read only";;
+    5) echo "Read & execute";;
+    6) echo "Read & write";;
+    7) echo "Read & write & execute";;
+  esac
+}
+
+[[ ! -e $1 ]] &&  echo "<file or dir> doesnot exist" 2>&1 && exit 1
+
+perm=$(stat -c%a "$1")
+user=${perm:0:1}
+group=${perm:1:1}
+global=${perm:2:1}
+
+echo "Permissions :"
+echo "Owner Access: $(print_perm $user)"
+echo "Group Access: $(print_perm $group)"
+echo "Others Access: $(print_perm $global)"

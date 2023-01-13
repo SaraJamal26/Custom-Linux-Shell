@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [[ "${1: -4}" == ".txt" ]];then
+        echo "$1 is a text file"
+elif [[ "${1: -3}" == ".sh" ]];then
+	echo "$1 is shell script"
+elif [[ "${1: -2}" == ".c" ]];then
+	echo "$1 is C file"
+elif [[ "${1: -3}" == ".cpp" ]];then
+	echo "$1 is a C++ file"
+elif [[ "${1: -2}" == ".m" ]];then
+	echo "$1 is a MATLAB file"
+elif [[ "${1: -3}" == ".py" ]];then
+	echo "$1 is a Python file"
+else
+	echo "file type unknown"
+fi
+

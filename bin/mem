@@ -1,0 +1,3 @@
+#!/bin/bash
+
+egrep 'MemTotal|MemFree|MemAvailable' /proc/meminfo
